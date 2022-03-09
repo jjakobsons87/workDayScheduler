@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -28,11 +28,34 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <main class="container">
+      <div class="row">
+        <div class="col border-top">
+          <h4 class="card-header text-dark text-center">9am</h4>
+        </div>
+        <textarea class="col-9 description bg-light border border-2 border-white"></textarea>
+        <div class="col bg-info border border-white rounded-end">
+          <button type="button" class="btn btn-primary bi bi-save med-1 fas fa-save"></button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col border-top">
+          <h4 class="card-header text-dark text-center">10am</h4>
+        </div>
+        <textarea class="col-9 description bg-light border border-2 border-white"></textarea>
+        <div class="col bg-info border border-white rounded-end">
+          <button type="button" class="btn btn-primary bi bi-save med-1 fas fa-save"></button>
+        </div>
+      </div>
+
+      
+    </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>    
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
 </html>
