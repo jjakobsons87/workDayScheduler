@@ -29,24 +29,36 @@
       <p id="currentDay" class="lead"></p>
     </header>
 
+    <!-- first row- 9am  -->
     <main class="container">
       <div class="row">
-        <div class="col border-top">
-          <h4 class="card-header text-dark text-center">9am</h4>
+        <div class="col border-top" data-hour="9">
+          <h4 class="text-dark text-center">9am</h4>
         </div>
-        <textarea class="col-9 description bg-light border border-2 border-white"></textarea>
-        <div class="col bg-info border border-white rounded-end">
-          <button type="button" class="btn btn-primary bi bi-save med-1 fas fa-save"></button>
+        <textarea id ="9" class="col-9 description bg-light border border-2 border-white"></textarea>
+        <div id="saveBtn" class="col bg-info border border-white rounded-end">
+          <button type="button" class="btn btn-primary med-1 fas fa-save"></button>
+        </div>
+      </div>
+
+      <!-- 10am  -->
+      <div class="row">
+        <div class="col border-top">
+          <h4 class="text-dark text-center">10am</h4>
+        </div>
+        <textarea id="10" class="description col-9 bg-light border border-2 border-white"></textarea>
+        <div class="col bg-info border border-white rounded-end rounded-3">
+          <button type="button" class="btn btn-primary med-1 fas fa-save"></button>
         </div>
       </div>
 
       <div class="row">
         <div class="col border-top">
-          <h4 class="card-header text-dark text-center">10am</h4>
+          <h4 class="text-dark text-center">11am</h4>
         </div>
         <textarea class="col-9 description bg-light border border-2 border-white"></textarea>
-        <div class="col bg-info border border-white rounded-end">
-          <button type="button" class="btn btn-primary bi bi-save med-1 fas fa-save"></button>
+        <div class="col bg-info border border-white rounded-end rounded-3">
+          <button type="button" class="btn btn-primary med-1 fas fa-save"></button>
         </div>
       </div>
 
