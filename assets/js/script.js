@@ -28,14 +28,6 @@ function checkTime() {
     });
 }
 
-  // apply new class if task is near/over due date
-  if (moment().isAfter(time)) {
-    $(taskEl).addClass("list-group-item-danger");
-  } else if (Math.abs(moment().diff(time, "days")) <= 2) {
-    $(taskEl).addClass("list-group-item-warning");
-  }
-};
-
 // load all the tasks 
 var loadTasks = function() {
     for (let tasks = 9; count < 18; count++) {
