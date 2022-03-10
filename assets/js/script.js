@@ -1,26 +1,5 @@
 var tasks = [];
 
-function createTasks(tasksText) {
-    var tasksText = $("text-area").text(textInput);
-    tasksText.append(tasksText);
-}
-
-// load all the tasks 
-var loadTasks = function() {
-    for (let taskCount = 9; taskCount < 18; taskCount++) {
-        localStorage.getItem(taskCount);
-        let myString = localStorage.getItem(taskCount);
-        if (myString) {
-            $("#" + taskCount).val(myString);
-        }
-    }
-}
-
-// save the tasks
-var saveTasks = function(clickedButton) {
-    tasks[$(clickedButton).parent().attr("data-hour")] = $("data-hour").val();
-}
-
 // time display/validation 
 var time = document.getElementById("currentDay");
 function currentDay() {
@@ -52,22 +31,35 @@ function checkTime() {
 
 setInterval(checkTime, 1000);
 
+// create the tasks 
+function createTasks(tasksText) {
+    var tasksText = $("text-area").text(textInput);
+    tasksText.append(tasksText);
+}
+
+// load all the tasks 
+var loadTasks = function() {
+    tasks = localStorage.getItem("tasks")
+}
+
+// save the tasks
+function saveTasks() {
+    $(".event-time").html(localStorage.mydata)
+};
+
 // edit cards
 $(".event-time").on("click", function() {
-    var text = "";
-    var textInput = $("<textarea>").val(text);
-    textInput.trigger("focus");
+    var text = $(".description").val();
+    var dataHour = $("#data-hour").val();
+    localStorage.mydata =data
 });
 
-
-$(".saveBtn").on("click", function () {
+// when save button is clicked 
+$(".saveBtn").click(function() {
     var text = $(".description").val();
     localStorage.setItem($(".description").parent().attr("data-hour"), text);
     console.log(text);
-    loadTasks();
+    saveTasks();
 });
-
-
-
 
 loadTasks(); 
