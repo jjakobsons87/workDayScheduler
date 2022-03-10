@@ -1,8 +1,10 @@
+var tasks = [];
+
 
 // time display/validation 
-var date = document.getElementById("currentDay");
+var dateTime = document.getElementById("currentDay");
 function currentDay() {
-    time.textContent = new Date().toString();
+    dateTime.textContent = new Date().toString();
 }
 
 // setting a refresh for every second
@@ -30,11 +32,11 @@ function checkTime() {
 
 // load all the tasks 
 var loadTasks = function() {
-    for (let tasks = 9; count < 18; count++) {
+    for (let tasks = 9; tasks < 18; tasks++) {
         localStorage.getItem(tasks);
         let myString = localStorage.getItem(tasks);
         if (myString) {
-            $("#" + count).val(myString);
+            $("#" + tasks).val(myString);
         }
     }
 }

@@ -32,32 +32,33 @@
     <!-- first row- 9am  -->
     <main class="container">
       <div class="row">
-        <div class="col border-top" data-hour="9">
-          <h4 class="text-dark text-center">9am</h4>
+        <div class="col event-time hour" data-hour="9">
+          <h4 class="time-block">9am</h4>
         </div>
         <textarea id ="9" class="col-9 description bg-light border border-2 border-white"></textarea>
-        <div id="saveBtn" class="col bg-info border border-white rounded-end">
+        <div id="saveBtn" class="col bg-info border border-white saveBtn">
           <button type="button" class="btn btn-primary med-1 fas fa-save"></button>
         </div>
       </div>
 
       <!-- 10am  -->
       <div class="row">
-        <div class="col border-top">
+        <div class="col event-time hour" data-hour="10">
           <h4 class="text-dark text-center">10am</h4>
         </div>
         <textarea id="10" class="description col-9 bg-light border border-2 border-white"></textarea>
-        <div class="col bg-info border border-white rounded-end rounded-3">
+        <div class="col bg-info border border-white saveBtn">
           <button type="button" class="btn btn-primary med-1 fas fa-save"></button>
         </div>
       </div>
 
+      <!-- 11 am -->
       <div class="row">
-        <div class="col border-top">
+        <div class="col event-time hour" data-hour="11">
           <h4 class="text-dark text-center">11am</h4>
         </div>
         <textarea class="col-9 description bg-light border border-2 border-white"></textarea>
-        <div class="col bg-info border border-white rounded-end rounded-3">
+        <div class="col bg-info border border-white saveBtn">
           <button type="button" class="btn btn-primary med-1 fas fa-save"></button>
         </div>
       </div>
@@ -69,5 +70,6 @@
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./assets/js/script.js"></script>
   </body>
 </html>
