@@ -1,10 +1,30 @@
 var tasks = [];
 
+function createTasks(tasksText) {
+    var tasksText = $("text-area").text(textInput);
+    tasksText.append(tasksText);
+}
+
+// load all the tasks 
+var loadTasks = function() {
+    for (let taskCount = 9; taskCount < 18; taskCount++) {
+        localStorage.getItem(taskCount);
+        let myString = localStorage.getItem(taskCount);
+        if (myString) {
+            $("#" + taskCount).val(myString);
+        }
+    }
+}
+
+// save the tasks
+var saveTasks = function(clickedButton) {
+    tasks[$(clickedButton).parent().attr("data-hour")] = $("data-hour").val();
+}
 
 // time display/validation 
-var dateTime = document.getElementById("currentDay");
+var time = document.getElementById("currentDay");
 function currentDay() {
-    dateTime.textContent = new Date().toString();
+    time.textContent = new Date().toString();
 }
 
 // setting a refresh for every second
@@ -13,7 +33,7 @@ setInterval(currentDay, 1000);
 // add text content of the current date 
 function checkTime() {
   // get date from task element
-    var clockEl = moment().date();
+    var clockEl = moment().hours();
     $(".event-time").each(function () {
         var hourRow = parseInt($(this).attr("data-hour"));
 
@@ -30,28 +50,24 @@ function checkTime() {
     });
 }
 
-// load all the tasks 
-var loadTasks = function() {
-    for (let tasks = 9; tasks < 18; tasks++) {
-        localStorage.getItem(tasks);
-        let myString = localStorage.getItem(tasks);
-        if (myString) {
-            $("#" + tasks).val(myString);
-        }
-    }
-}
+setInterval(checkTime, 1000);
 
-// save the tasks
-var saveTasks = function() {
-    localStorage.setItem("tasks", JSON.stringify());
-};
+// edit cards
+$(".event-time").on("click", function() {
+    var text = "";
+    var textInput = $("<textarea>").val(text);
+    textInput.trigger("focus");
+});
 
 
-// save button is clicked in the task field 
-$("#saveBtn .btn").on("click", function() {
-    var text = $(this).siblings("description").val();
-    localStorage.setItem($(this).parent().attr("data-hour"), text);
+$(".saveBtn").on("click", function () {
+    var text = $(".description").val();
+    localStorage.setItem($(".description").parent().attr("data-hour"), text);
+    console.log(text);
     loadTasks();
 });
+
+
+
 
 loadTasks(); 
